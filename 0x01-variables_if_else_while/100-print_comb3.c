@@ -9,18 +9,22 @@
  */
 int main(void)
 {
-	int i;
+	int fd;
+	int sd;
 
-	putchar('0');
-	putchar('1');
-
-	for (i = 2; i < 10; i++)
+	for (fd = 0; fd < 9; fd++)
 	{
-		putchar(',');
-		putchar(' ');
+		for (sd = first_digit + 1; sd <= 9; sd++)
+		{
+			putchar(fd + '0');
+			putchar(sd + '0');
 
-		putchar('0');
-		putchar(i + '0');
+			if (fd != 8 || sd != 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		}
 	}
 
 	putchar('\n');
