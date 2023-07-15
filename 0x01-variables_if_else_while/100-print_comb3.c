@@ -1,33 +1,34 @@
 #include <stdio.h>
 
 /**
- * main - Entry point of the program
- *
- * Description: Prints all possible different combinations of two digits
- *
- * Return: Always 0 (Success)
- */
+* main - loop through variables a and b, printing digits
+*
+* Return: print to stdout all possible different combinations of twodigits
+**/
 int main(void)
 {
-	int fd;
-	int sd;
+int a = '0';
+int b;
 
-	for (fd = 0; fd < 9; fd++)
-	{
-		for (sd = first_digit + 1; sd <= 9; sd++)
-		{
-			putchar(fd + '0');
-			putchar(sd + '0');
-
-			if (fd != 8 || sd != 9)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
-	}
-
-	putchar('\n');
-
-	return (0);
+while (a <= '9')
+{
+b = a + 1;
+while (b <= '9')
+{
+putchar(a);
+putchar(b);
+if (a == '8' && b == '9')
+{
+putchar('\n');
+}
+else
+{
+putchar(',');
+putchar(' ');
+}
+b++;
+}
+a++;
+}
+return (0);
 }
