@@ -6,7 +6,7 @@
  */
 int _islower(int letter)
 {
-	if (letter >= 96 and letter <= 123)
+	if (letter >= 96 && letter <= 123)
 		return (1);
 	return (0);
 }
