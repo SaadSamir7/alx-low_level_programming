@@ -4,9 +4,10 @@
  * @c: char type letter
  * Return: 1 if lowercase, 0 if not lowercase
  */
-int _islower(int letter)
+int _islower(int c)
 {
-	if (letter >= 96 && letter <= 123)
+	if (c > 96 && c < 123)
 		return (1);
-	return (0);
+	else
+		return (0);
 }
