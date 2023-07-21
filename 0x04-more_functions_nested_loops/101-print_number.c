@@ -23,7 +23,8 @@ void print_number(int n)
 
 	temp = n;
 	digit = 1;
-	while (temp > 9)
+
+	while (temp >= 10)
 	{
 		temp /= 10;
 		digit *= 10;
