@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- *_puts - prints a string
+ *_puts2 ->  prints every other character of a string
  *@str: char
  *Return: string
  **/
-void _puts(char *str)
-{
+void puts2(char *str)
+i{
 	int i;
 
 	for (i = 0; *(str + i) != '\0'; i += 2)
