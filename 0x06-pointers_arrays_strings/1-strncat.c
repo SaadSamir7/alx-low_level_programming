@@ -1,26 +1,33 @@
 #include "main.h"
 
 /**
- **_strncat - Custom implementation of strncat function.
- *@destination: The destination buffer to concatenate the string.
- *@source: The source string to be concatenated.
- *@num_chars: The maximum number of characters to concatenate.
- *Return: A pointer to the destination buffer.
- */
-char *_strncat(char *destination, char *source, int num_chars)
+* *_strncat - concatenates two strings.
+* @dest: string to be appended
+* @src: string to be appended from
+* @n: number of bytes from src
+* Return: a pointer to the resulting string dest
+**/
+
+char *_strncat(char *dest, char *src, int n)
 {
-	int dest_len = 0, src_len = 0;
+	int i, j;
 
-	while (*(destination + dest_len) != '\0')
-		dest_len++;
-
-	while (*(source + src_len) != '\0' && dest_len < 97 && src_len < num_chars)
+	if (n <= 0)
 	{
-		*(destination + dest_len) = *(source + src_len);
-		dest_len++;
-		src_len++;
+		return (dest);
 	}
 
-	*(destination + dest_len) = '\0';
-	return destination;
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (j < n && src[j] != '\0')
+	{
+		dest[i++] = src[j++];
+	}
+	dest[i++] = '\0';
+	return (dest);
 }
