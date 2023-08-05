@@ -9,14 +9,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int a = atoi(argv[1]);
-	int b = atoi(argv[2]);
+	int mul = 0;
+	char s[] = "Error";
 
 	if (argc != 3)
 	{
-		printf("Error\n");
+		printf("%s\n", s);
 		return (1);
 	}
-
-	printf("%d\n", (a * b));
+	mul = atoi(argv[1]) * atoi(argv[2]);
+	printf("%i\n", mul);
+	return (0);
 }
