@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	cent = atoi(argv[1]);
+	c = atoi(argv[1]);
 	i = 0;
 	while (c > 0)
 	{
