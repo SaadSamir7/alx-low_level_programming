@@ -7,45 +7,40 @@
  *@ac: number of arguments
  *@av: arguments
  * Return: a pointer to a new string
- **/
-
+ */
 char *argstostr(int ac, char **av)
 {
-	int len, k;
-	char *c;
-
-	if (ac == 0 || av == 0)
-		return (0);
-
-	len = 0;
-
-	for (int i = 0; i < ac; i++)
-	{
-		for (int j = 0; av[i][j]; j++)
-			len++;
-		len++;
-	}
-
-	*c = (char *) malloc(len + 1);
-
-	if (!c)
-		return (0);
+	int i;
+	int j;
+	char *p = NULL;
+	int k;
+	int ext;
 
 	k = 0;
-
-	for (int i = 0; i < ac; i++)
+	ext = 0;
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	for (i = 0; i < ac; i++)
 	{
-		for (int j = 0; av[i][j]; j++)
+		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			c[k] = av[i][j];
-			k++;
+			ext++;
 		}
-
-		c[k] = '\n';
-		k++;
 	}
 
-	c[k] = '\0';
-
-	return (c);
+	p = (char *)malloc(ext + ac + 1 * sizeof(char));
+	if (p == NULL)
+		return (NULL);
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			p[k] = av[i][j];
+			k++;
+		}
+		p[k] = '\n';
+		k++;
+	}
+	p[k] = '\0';
+	return (p);
 }
