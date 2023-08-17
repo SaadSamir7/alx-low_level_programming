@@ -4,7 +4,7 @@
 /**
  * main - print its own opcode
  * @argc: number of arguments
- * @argv: argument variables 
+ * @argv: argument variables
  * Return: 0 on success
  */
 int main(int argc, char **argv)
