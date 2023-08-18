@@ -3,33 +3,22 @@
 #include <stdarg.h>
 
 /**
- *print_strings - a function that prints a string
- *@separator: separator between strings
- *@n: numbers of arguments
+ *print_numbers - prints numbers
+ *@separator: separator between numbers
+ *@n: numbers of args
  *Return: nothing
- */
-void print_strings(const char *separator, const unsigned int n, ...)
+ **/
+void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	va_list args;
+	va_list st;
 	unsigned int i;
 
-	char *p;
-
-	va_start(args, n);
+	va_start(st, n);
 
 	for (i = 0; i < n; i++)
 	{
-		p = va_arg(args, char *);
-		if (p == NULL)
-		{
-			printf("(nil)");
-		}
-		else
-		{
-			printf("%s", p);
-		}
-
-		if (i < n - 1)
+		printf("%d", va_arg(st, int));
+		if (i != n - 1)
 		{
 			if (separator)
 				printf("%s", separator);
@@ -37,5 +26,5 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	}
 
 	printf("\n");
-	va_end(args);
+	va_end(st);
 }
